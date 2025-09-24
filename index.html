@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>俄羅斯方塊 - Tetris</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <h1>俄羅斯方塊</h1>
+            <div class="game-info">
+                <div class="score-info">
+                    <div class="info-item">
+                        <span class="label">分數:</span>
+                        <span id="score" data-testid="text-score">0</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">等級:</span>
+                        <span id="level" data-testid="text-level">1</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">消除行數:</span>
+                        <span id="lines" data-testid="text-lines">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="game-area">
+            <canvas id="gameCanvas" width="240" height="400" data-testid="canvas-game"></canvas>
+            <div class="game-over" id="gameOver" data-testid="modal-gameover">
+                <div class="game-over-content">
+                    <h2>遊戲結束</h2>
+                    <p>最終分數: <span id="finalScore" data-testid="text-finalscore">0</span></p>
+                    <button id="restartBtn" data-testid="button-restart">重新開始</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="controls">
+            <h3>控制方式</h3>
+            <div class="control-item">
+                <span class="key">←</span>
+                <span class="desc">左移</span>
+            </div>
+            <div class="control-item">
+                <span class="key">→</span>
+                <span class="desc">右移</span>
+            </div>
+            <div class="control-item">
+                <span class="key">↓</span>
+                <span class="desc">加速下落</span>
+            </div>
+            <div class="control-item">
+                <span class="key">↑</span>
+                <span class="desc">旋轉方塊</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

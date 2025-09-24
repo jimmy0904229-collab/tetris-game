@@ -1,0 +1,198 @@
+/* 全域樣式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* 遊戲容器 */
+.game-container {
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+}
+
+/* 標題 */
+.game-container h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #00d4ff;
+    text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+}
+
+/* 遊戲資訊區 */
+.game-info {
+    margin-bottom: 20px;
+}
+
+.score-info {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 15px;
+}
+
+.info-item {
+    background: rgba(0, 212, 255, 0.1);
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 212, 255, 0.3);
+}
+
+.label {
+    display: block;
+    font-size: 0.9em;
+    color: #cccccc;
+    margin-bottom: 5px;
+}
+
+.info-item span:last-child {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #00d4ff;
+}
+
+/* 遊戲區域 */
+.game-area {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+#gameCanvas {
+    border: 3px solid #00d4ff;
+    border-radius: 10px;
+    background: #000;
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+}
+
+/* 遊戲結束畫面 */
+.game-over {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.game-over-content {
+    background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.game-over-content h2 {
+    font-size: 2em;
+    margin-bottom: 15px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.game-over-content p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+#restartBtn {
+    background: linear-gradient(135deg, #00d4ff, #0fbcf9);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 25px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 212, 255, 0.3);
+}
+
+#restartBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 20px rgba(0, 212, 255, 0.5);
+}
+
+/* 控制說明 */
+.controls {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.controls h3 {
+    margin-bottom: 15px;
+    color: #00d4ff;
+    font-size: 1.3em;
+}
+
+.control-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding: 8px 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+}
+
+.key {
+    background: linear-gradient(135deg, #00d4ff, #0fbcf9);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-weight: bold;
+    min-width: 30px;
+    display: inline-block;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.desc {
+    color: #cccccc;
+    font-size: 0.9em;
+}
+
+/* 響應式設計 */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+    
+    .game-container {
+        padding: 20px;
+    }
+    
+    .game-container h1 {
+        font-size: 2em;
+    }
+    
+    .score-info {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    #gameCanvas {
+        max-width: 100%;
+        height: auto;
+    }
+}
